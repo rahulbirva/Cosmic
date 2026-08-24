@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Auth from './pages/Auth';
 import Onboarding from './pages/Onboarding';
+import Personalize from './pages/Personalize';
 import Home from './pages/Home';
 
 export default function App() {
@@ -16,7 +17,11 @@ export default function App() {
             )}
 
             {currentPage === 'onboarding' && (
-                <Onboarding onComplete={() => setCurrentPage('home')} />
+                <Onboarding onComplete={() => setCurrentPage('personalize')} />
+            )}
+
+            {currentPage === 'personalize' && (
+                <Personalize onComplete={() => setCurrentPage('home')} />
             )}
 
             {currentPage === 'home' && (
